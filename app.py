@@ -24,7 +24,7 @@ def contarletras(palabra,letra):
 
 @app.route('/libro/<codigo>')
 def libros(codigo):
-	doc=etree.parse('/home/usuario/github/Flask/libros.xml')
+	doc=etree.parse('./libros.xml')
 	if codigo in doc.xpath("//codigo/text()"):
 		libro=doc.xpath(f"//titulo[../codigo={codigo}]/text()")[0]
 		autor=doc.xpath(f"//autor[../codigo={codigo}]/text()")[0]
